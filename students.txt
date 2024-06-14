@@ -1,0 +1,21 @@
+import os.path
+
+
+def main():
+    filename = "students.txt"
+    abs_file_path = os.path.abspath(filename)  # returns absolute path for the given file
+    dir_name = os.path.dirname(abs_file_path)  # returns filename without directory in front of it
+    print("Absolute Path : ", abs_file_path)
+    print("Directory : ", dir_name)  # returns directory given file is in
+    print("Base Name : ", os.path.basename(abs_file_path))  # returns filename without directory in front of it
+
+    # Check if the file exists before getting its size and checking if it's a file/directory
+    if os.path.exists(filename):
+        print("File Size : ", os.path.getsize(filename))  # returns the size of the given file in bytes
+        print("Is A File? : ", os.path.isfile(filename))  # returns 'True' if the given file exists
+        print("Is A Directory? : ", os.path.isdir(filename))  # returns 'True' if the given directory exists
+    else:
+        print("File does not exist.")
+
+if __name__ == '__main__':
+    main()
